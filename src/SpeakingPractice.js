@@ -44,7 +44,7 @@ function SpeakingPractice() {
   const getRandomTopic = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5050/api/topic", {
+      const res = await fetch("https://impromptu-backend.vercel.app/api/topic", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
