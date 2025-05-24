@@ -39,5 +39,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+      
+    <script>
+  var vapiInstance = null;
+  const assistant = "d4383dba-a9ac-46d3-ad96-019943740783"; // Replace with your Assistant ID
+  const apiKey = "44bb2827-8afd-46e9-85a8-0aa2aed24215"; // Replace with your Public API Key
+
+  (function (d, t) {
+    var g = document.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+    g.onload = function () {
+      vapiInstance = window.vapiSDK.run({
+        apiKey: apiKey,
+        assistant: assistant,
+        config: {
+          // Customize button style here if you want
+        }
+      });
+    };
+  })(document, "script");
+</script>
+
   </body>
 </html>
